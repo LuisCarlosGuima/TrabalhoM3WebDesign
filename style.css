@@ -1,0 +1,176 @@
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+/* Estilos da Navegação */
+nav {
+    background-color: #555;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* Estilos do Conteúdo Principal */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.carros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carro {
+    width: 30%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.carro:hover {
+    transform: translateY(-5px);
+}
+
+.carro img {
+    width: 100%;
+    height: auto;
+}
+
+.pecas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.peca {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.peca:hover {
+    transform: translateY(-5px);
+}
+
+.peca img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .carro,
+    .peca {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carro,
+    .peca {
+        width: 100%;
+    }
+}
+/* Estilos do Formulário de Contato */
+section#contato {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+section#contato h2 {
+    margin-bottom: 20px;
+}
+
+section#contato form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+section#contato label {
+    font-weight: bold;
+}
+
+section#contato input[type="text"],
+section#contato input[type="email"],
+section#contato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+section#contato input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+section#contato input[type="submit"]:hover {
+    background-color: #555;
+}
