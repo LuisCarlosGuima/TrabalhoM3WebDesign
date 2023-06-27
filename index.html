@@ -4,32 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carros Inc.</title>
+    <title>Sombra Motorsport</title>
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Carros Inc.</h1>
+        <img src="imagens/logo-white.png" alt="logo branca">
+        <h2>Sombra Motorsport</h2>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#quem-somos">Quem Somos?</a></li>
+                <li><a href="#carros">Carros</a></li>
+                <li><a href="#pecas">Peças</a></li>
+                <li><a href="#servicos">Serviços de manutenção</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#carros">Carros</a></li>
-            <li><a href="#pecas">Peças</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
 
     <main>
         <section id="home">
-            <h2>Bem-vindo à Carros Inc.</h2>
-            <p>Seu destino para informações e peças de carros.</p>
+            <h1>Sombra motorsport.</h1>
+            <p>Seu principal destino para performance e peças automotivas.</p>
+        </section>
+
+        <section id="quem-somos">
+            <h2>Quem somos?</h2>
+            <p>&emsp;&emsp;A <strong>Sombra Motorsport</strong> é uma empresa dedicada a fornecer soluções completas
+                para os entusiastas e proprietários de
+                automóveis. Com uma vasta experiência no setor automotivo, nossa paixão por carros nos impulsiona a
+                oferecer uma ampla gama de serviços, desde a divulgação de veículos de qualidade até a disponibilização
+                de peças automotivas confiáveis e serviços especializados. Nossa equipe de profissionais altamente
+                capacitados e experientes está comprometida em oferecer uma experiência excepcional aos nossos clientes,
+                combinando conhecimento técnico, atendimento personalizado e produtos de alta qualidade. Seja qual for a
+                sua necessidade automotiva, estamos aqui para ajudar você a encontrar a solução perfeita que atenda às
+                suas expectativas e supere suas demandas. Junte-se a nós em nossa jornada automotiva e descubra o que
+                fazemos para manter sua paixão pelos carros viva.</p>
         </section>
 
         <section id="carros">
-            <h2>Carros em Destaque</h2>
+            <h2>Carros e Peças em destaque</h2>
             <div class="carros">
                 <div class="carro">
                     <img src="imagens/imagem1.jpg" alt="Carro 1">
@@ -69,6 +86,36 @@
                 </div>
             </div>
         </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div class="servicos">
+                <div class="servico">
+                    <img src="imagens/servico1.jpg" alt="Serviço 1">
+                    <div class="servico-content">
+                        <h2>Troca de óleo</h2>
+                        <p>&emsp;Efetuamos a troca de óleo do seu veículo rapidamente com produtos de qualidade e mão de obra
+                            especializada.</p>
+                    </div>
+                </div>
+                <div class="servico">
+                    <div class="servico-content">
+                        <h2>Balanceamento e geometria</h2>
+                        <p>&emsp;Utilizamos equipamentos de precisão e especializado para o correto alinhamento do seu veículo.
+                        </p>    
+                    </div>
+                    <img src="imagens/servico2.jpg" alt="Serviço 2">
+                </div>
+                <div class="servico">
+                    <img src="imagens/servico3.jpg" alt="Serviço 3">
+                    <div class="servico-content">
+                        <h2>Troca do freio</h2>
+                        <p>&emsp;Efetue uma revisão no sistema de freio do seu veículo para mantê-lo em dia.</p>    
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contato">
             <h2>Entre em Contato</h2>
             <form>
@@ -97,38 +144,38 @@
 
 <script>
     // Suavização do Menu
-const links = document.querySelectorAll('nav ul li a');
+    const links = document.querySelectorAll('nav ul li a');
 
-links.forEach(link => {
-    link.addEventListener('click', smoothScroll);
-});
+    links.forEach(link => {
+        link.addEventListener('click', smoothScroll);
+    });
 
-function smoothScroll(e) {
-    e.preventDefault();
+    function smoothScroll(e) {
+        e.preventDefault();
 
-    const targetId = e.target.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    const targetPosition = targetElement.offsetTop;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000;
-    let start = null;
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const targetPosition = targetElement.offsetTop;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000;
+        let start = null;
 
-    function animation(currentTime) {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
+        function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
     }
-
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-}
 </script>
