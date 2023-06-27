@@ -151,12 +151,14 @@ section {
 }
 
 .pecas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .peca {
+    width: 30%;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 4px;
@@ -208,20 +210,7 @@ footer {
     text-align: center;
 }
 
-/* Estilos Responsivos */
-@media screen and (max-width: 768px) {
-    .carro,
-    .peca {
-        width: 48%;
-    }
-}
 
-@media screen and (max-width: 480px) {
-    .carro,
-    .peca {
-        width: 100%;
-    }
-}
 /* Estilos do Formulário de Contato */
 section#contato {
     background-color: #f8f8f8;
@@ -261,4 +250,41 @@ section#contato input[type="submit"] {
 
 section#contato input[type="submit"]:hover {
     background-color: #555;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .carro,
+    .peca {
+        width: 48%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 20px 0;
+        justify-content: center;
+    }
+
+    header h2 {
+        right: 0;
+    }
+
+    header img {
+        left: 0;
+    }
+
+    nav {
+        width: 90%;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carro,
+    .peca {
+        width: 100%;
+    }
 }
